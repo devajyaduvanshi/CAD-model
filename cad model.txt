@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot name="simple_car">
+
+
+<material name="black">
+<color rgba="0 0 0 1"/>
+</material>
+
+<link name="base_link">
+<visual>
+<geometry>
+<box size="0.7 0.5 0.3"/>
+</geometry>
+<material name="black"/>
+</visual>
+</link>
+
+<link name="wheel">
+<visual>
+<geometry>
+<cylinder length="0.1" radius="0.15"/>
+</geometry>
+<material name="black"/>
+</visual>
+</link>
+
+<joint name="joint_wheel1" type="continuous">
+<parent link="base_link"/>
+<child link="wheel"/>
+<origin xyz="0.2 0.25 -0.15"/>
+<axis xyz="0 0 1"/>
+</joint>
+
+<joint name="joint_wheel2" type="continuous">
+<parent link="base_link"/>
+<child link="wheel"/>
+<origin xyz="0.2 -0.25 -0.15"/>
+<axis xyz="0 0 1"/>
+</joint>
+
+<joint name="joint_wheel3" type="continuous">
+<parent link="base_link"/>
+<child link="wheel"/>
+<origin xyz="-0.2 0.25 -0.15"/>
+<axis xyz="0 0 1"/>
+</joint>
+
+<joint name="joint_wheel4" type="continuous">
+<parent link="base_link"/>
+<child link="wheel"/>
+<origin xyz="-0.2 -0.25 -0.15"/>
+<axis xyz="0 0 1"/>
+</joint>
+
+</robot>
